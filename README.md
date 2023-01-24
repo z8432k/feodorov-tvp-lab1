@@ -1,2 +1,2 @@
-# feodorov-tcp-lab1
+# feodorov-tvp-lab1
 Теория вычислительных процессов. ЛР №1.
