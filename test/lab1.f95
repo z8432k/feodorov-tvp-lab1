@@ -5,6 +5,6 @@ program test_lab1
 
   print *, c
 
-  call cycle
-  call recursion
+  call cycle()
+  call recursion(2, 3)
 end
