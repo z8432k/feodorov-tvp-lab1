@@ -1,5 +1,5 @@
-add_library(cycle OBJECT cycle.f)
-add_library(recursion OBJECT recursion.f)
+add_library(cycle OBJECT cycle.f95)
+add_library(recursion OBJECT recursion.f95)
 
 set(LIB_OBJECTS)
 list(APPEND LIB_OBJECTS
