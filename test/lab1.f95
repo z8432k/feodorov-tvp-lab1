@@ -1,10 +1,7 @@
 program test_lab1
-  a = 0.1
-  b = 0.2
-  c = a + b
+  ix1 = 2
+  ix2 = 3
 
-  print *, c
-
-  call cycle()
-  call recursion(2, 3)
+  call cycle(ix1, ix2)
+  call recursion(ix1, ix2)
 end
