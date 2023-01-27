@@ -1,15 +1,20 @@
 ! Cycle version
-subroutine cycle(x1, x2)
-  integer, intent(in) :: x1, x2
-  integer :: result
+module cycle
+  private
 
-  result = 0
+  public :: cyc
 
-  do i = 1, x1
-    result = result + 2
-  end do
+  contains
 
-  result = result + x2
+  pure integer function cyc(x1, x2) result(res)
+    integer, intent(in) :: x1, x2
 
-  print *, "Cycle value: ", result
-end
+    res = 0
+
+    do i = 1, x1
+      res = res + 2
+    end do
+
+    res = res + x2
+  end
+end module cycle

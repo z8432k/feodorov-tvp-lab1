@@ -1,32 +1,35 @@
 ! Recursion version
-subroutine recursion(x1, x2)
-  integer, intent(in) :: x1, x2
-  integer :: result
+module recursion
+  private
 
-  result = g(x1) + h(x2)
-
-  print *, "Recursion value: ", result
+  public :: rec
 
   contains
 
-  pure recursive integer function g(x) result (res)
-    integer, intent(in) :: x
+  pure integer function rec(x1, x2) result(res)
+    integer, intent(in) :: x1, x2
 
-    if (x == 0) then
-      res = 0
+    res = g(x1) + h(x2)
 
-      return
-    end if
+    contains
 
-    res = g(x - 1) + 2
+    pure recursive integer function g(x) result (gres)
+      integer, intent(in) :: x
+
+      if (x == 0) then
+        gres = 0
+
+        return
+      end if
+
+      gres = g(x - 1) + 2
+    end
+
+    pure integer function h(x)
+      integer, intent(in) :: x
+
+      h = x
+    end
+
   end
-
-  pure integer function h(x)
-    integer, intent(in) :: x
-
-    h = x
-  end
-
-end
-
-
+end module recursion

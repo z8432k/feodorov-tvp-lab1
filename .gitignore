@@ -12,3 +12,5 @@ _deps
 
 build/
 tmp/
+src/**/*.mod
+test/**/*.mod
